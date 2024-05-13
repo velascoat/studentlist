@@ -36,10 +36,10 @@
 
     <?php
     // Database connection
-    $servername = "your_server_name.database.windows.net";
-    $username = "your_username";
-    $password = "your_password";
-    $dbname = "your_database_name";
+    $servername = "cldcomp.database.windows.net";
+    $username = "abby";
+    $password = "#Cldcomp22";
+    $dbname = "namelist";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
