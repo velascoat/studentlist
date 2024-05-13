@@ -39,7 +39,7 @@
     $servername = "cldcomp.database.windows.net";
     $username = "abby";
     $password = "#Cldcomp22";
-    $dbname = "namelist (abby";
+    $dbname = "namelist";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
@@ -50,7 +50,7 @@
     // If form submitted, insert student name into database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST['name'];
-        $sql = "INSERT INTO dbo.students (name) VALUES ('$name')";
+        $sql = "INSERT INTO students (name) VALUES ('$name')";
         if ($conn->query($sql) === TRUE) {
             echo "New student added successfully";
         } else {
@@ -59,7 +59,7 @@
     }
 
     // Display list of students
-    $sql = "SELECT * FROM dbo.students";
+    $sql = "SELECT * FROM students";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
