@@ -39,7 +39,7 @@
     $servername = "cldcomp.database.windows.net";
     $username = "abby";
     $password = "#Cldcomp22";
-    $dbname = "namelist";
+    $dbname = "studentlist";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
