@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Database</title>
+    <title>Student Name List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,6 +35,11 @@
     </form>
 
     <?php
+    // Enable error reporting
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     // Database connection
     $servername = "cldcomp.database.windows.net";
     $username = "abby";
@@ -45,16 +50,19 @@
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
+    } else {
+        echo "Connected successfully<br>";
     }
 
     // If form submitted, insert student name into database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "Form submitted! Name: " . $_POST['name'] . "<br>";
         $name = $_POST['name'];
         $sql = "INSERT INTO students (name) VALUES ('$name')";
         if ($conn->query($sql) === TRUE) {
-            echo "New student added successfully";
+            echo "New student added successfully<br>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
         }
     }
 
