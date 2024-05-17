@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <h2>Student Database</h2>
+    <h2>Student List</h2>
     
     <form action="index.php" method="post">
         <label for="name">Name:</label>
@@ -50,7 +50,7 @@
     // If form submitted, insert student name into database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST['name'];
-        $sql = "INSERT INTO students (name) VALUES ('$name')";
+        $sql = "INSERT INTO [dbo].[students] (name) VALUES ('$name')";
         if ($conn->query($sql) === TRUE) {
             echo "New student added successfully";
         } else {
@@ -59,7 +59,7 @@
     }
 
     // Display list of students
-    $sql = "SELECT * FROM students";
+    $sql = "SELECT * FROM [dbo].[students]";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
