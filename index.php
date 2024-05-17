@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <h2>Student List</h2>
+    <h2>Student Name List</h2>
     
     <form action="index.php" method="post">
         <label for="name">Name:</label>
