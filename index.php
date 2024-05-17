@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Name List</title>
+    <title>Student Database</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <h2>Student Name List</h2>
+    <h2>Student Database</h2>
     
     <form action="index.php" method="post">
         <label for="name">Name:</label>
